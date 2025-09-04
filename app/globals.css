@@ -1,0 +1,454 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Enhanced color tokens for light theme with more beautiful greens and nature tones */
+  --background: oklch(0.98 0.02 140); /* Light sage green with cream undertones */
+  --foreground: oklch(0.25 0.08 280); /* Deep lavender */
+  --card: oklch(0.96 0.03 120); /* Soft mint cream */
+  --card-foreground: oklch(0.3 0.1 160); /* Forest green */
+  --popover: oklch(0.99 0.01 140); /* Almost white with green hint */
+  --popover-foreground: oklch(0.25 0.08 280); /* Deep lavender */
+  --primary: oklch(0.65 0.12 150); /* Beautiful sage green */
+  --primary-foreground: oklch(0.98 0.01 120); /* Light cream */
+  --secondary: oklch(0.85 0.08 130); /* Soft mint green */
+  --secondary-foreground: oklch(0.25 0.08 280); /* Deep lavender */
+  --muted: oklch(0.88 0.06 140); /* Pale jade green */
+  --muted-foreground: oklch(0.35 0.08 160); /* Deep forest green */
+  --accent: oklch(0.75 0.1 110); /* Fresh spring green */
+  --accent-foreground: oklch(0.15 0 0); /* Charcoal */
+  --destructive: oklch(0.65 0.15 20); /* Soft red */
+  --destructive-foreground: oklch(1 0 0); /* White */
+  --border: oklch(0.8 0.08 140); /* Soft green border */
+  --input: oklch(0.95 0.03 130); /* Light mint input */
+  --ring: oklch(0.7 0.1 150); /* Sage green ring */
+  --chart-1: oklch(0.65 0.12 150); /* Sage green */
+  --chart-2: oklch(0.75 0.1 110); /* Spring green */
+  --chart-3: oklch(0.85 0.08 130); /* Mint green */
+  --chart-4: oklch(0.6 0.15 170); /* Emerald green */
+  --chart-5: oklch(0.55 0.18 180); /* Deep teal green */
+  --radius: 0.5rem;
+  --sidebar: oklch(0.95 0.03 130); /* Light mint */
+  --sidebar-foreground: oklch(0.3 0.1 160); /* Forest green */
+  --sidebar-primary: oklch(0.65 0.12 150); /* Sage green */
+  --sidebar-primary-foreground: oklch(0.98 0.01 120); /* Light cream */
+  --sidebar-accent: oklch(0.85 0.08 130); /* Mint green */
+  --sidebar-accent-foreground: oklch(0.25 0.08 280); /* Deep lavender */
+  --sidebar-border: oklch(0.8 0.08 140); /* Soft green border */
+  --sidebar-ring: oklch(0.7 0.1 150); /* Sage green ring */
+
+  /* Adding custom green color variables for enhanced botanical theme */
+  --forest-green: oklch(0.4 0.15 160); /* Deep forest green */
+  --sage-green: oklch(0.65 0.12 150); /* Beautiful sage */
+  --mint-green: oklch(0.85 0.08 130); /* Soft mint */
+  --spring-green: oklch(0.75 0.1 110); /* Fresh spring */
+  --jade-green: oklch(0.55 0.18 140); /* Rich jade */
+  --moss-green: oklch(0.45 0.12 120); /* Earthy moss */
+
+  --font-source-sans: "Source Sans Pro", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  /* Adding new decorative font variables */
+  --font-dancing: var(--font-dancing);
+  --font-crimson: var(--font-crimson);
+  --font-cormorant: var(--font-cormorant);
+}
+
+.dark {
+  /* Updated color tokens for dark theme - rainy night deep pastels */
+  --background: oklch(0.15 0 0); /* Charcoal */
+  --foreground: oklch(0.85 0.05 300); /* Muted lilac */
+  --card: oklch(0.2 0.02 280); /* Dark slate with purple tint */
+  --card-foreground: oklch(0.85 0.05 300); /* Muted lilac */
+  --popover: oklch(0.15 0 0); /* Charcoal */
+  --popover-foreground: oklch(0.85 0.05 300); /* Muted lilac */
+  --primary: oklch(0.4 0.12 280); /* Deep lavender */
+  --primary-foreground: oklch(0.95 0.02 60); /* Light cream */
+  --secondary: oklch(0.55 0.12 260); /* Medium slate blue */
+  --secondary-foreground: oklch(0.95 0.02 60); /* Light cream */
+  --muted: oklch(0.25 0.02 280); /* Dark muted */
+  --muted-foreground: oklch(0.7 0.04 300); /* Lighter muted lilac */
+  --accent: oklch(0.55 0.12 260); /* Medium slate blue */
+  --accent-foreground: oklch(0.95 0.02 60); /* Light cream */
+  --destructive: oklch(0.5 0.15 20); /* Darker red */
+  --destructive-foreground: oklch(0.95 0.02 60); /* Light cream */
+  --border: oklch(0.25 0.02 280); /* Dark muted */
+  --input: oklch(0.2 0.02 280); /* Dark slate */
+  --ring: oklch(0.4 0.12 280); /* Deep lavender */
+  --chart-1: oklch(0.4 0.12 280); /* Deep lavender */
+  --chart-2: oklch(0.55 0.12 260); /* Medium slate blue */
+  --chart-3: oklch(0.7 0.06 40); /* Soft coral */
+  --chart-4: oklch(0.8 0.04 140); /* Mint green */
+  --chart-5: oklch(0.85 0.05 300); /* Lavender mist */
+  --sidebar: oklch(0.18 0.01 280); /* Slightly lighter charcoal */
+  --sidebar-foreground: oklch(0.85 0.05 300); /* Muted lilac */
+  --sidebar-primary: oklch(0.4 0.12 280); /* Deep lavender */
+  --sidebar-primary-foreground: oklch(0.95 0.02 60); /* Light cream */
+  --sidebar-accent: oklch(0.25 0.02 280); /* Dark muted */
+  --sidebar-accent-foreground: oklch(0.85 0.05 300); /* Muted lilac */
+  --sidebar-border: oklch(0.25 0.02 280); /* Dark muted */
+  --sidebar-ring: oklch(0.4 0.12 280); /* Deep lavender */
+  --font-source-sans: "Source Sans Pro", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+  /* Adding new decorative font variables for dark theme */
+  --font-dancing: var(--font-dancing);
+  --font-crimson: var(--font-crimson);
+  --font-cormorant: var(--font-cormorant);
+}
+
+@theme inline {
+  /* Updated font variables to use Playfair Display and Source Sans Pro */
+  --font-sans: var(--font-source-sans);
+  --font-serif: var(--font-playfair);
+  --font-mono: var(--font-geist-mono);
+  /* Adding decorative font variables to theme */
+  --font-dancing: var(--font-dancing);
+  --font-crimson: var(--font-crimson);
+  --font-cormorant: var(--font-cormorant);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* Adding theme-based background images */
+    background-image: url("/images/fondo-dia.webp");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+  }
+
+  .dark body {
+    /* Dark theme background image */
+    background-image: url("/images/fondo-noche.webp");
+  }
+
+  /* Adding new green-themed utility classes for botanical elements */
+  .text-forest {
+    color: var(--forest-green);
+  }
+  .text-sage {
+    color: var(--sage-green);
+  }
+  .text-mint {
+    color: var(--mint-green);
+  }
+  .text-spring {
+    color: var(--spring-green);
+  }
+  .text-jade {
+    color: var(--jade-green);
+  }
+  .text-moss {
+    color: var(--moss-green);
+  }
+
+  .bg-forest {
+    background-color: var(--forest-green);
+  }
+  .bg-sage {
+    background-color: var(--sage-green);
+  }
+  .bg-mint {
+    background-color: var(--mint-green);
+  }
+  .bg-spring {
+    background-color: var(--spring-green);
+  }
+  .bg-jade {
+    background-color: var(--jade-green);
+  }
+  .bg-moss {
+    background-color: var(--moss-green);
+  }
+
+  .border-forest {
+    border-color: var(--forest-green);
+  }
+  .border-sage {
+    border-color: var(--sage-green);
+  }
+  .border-mint {
+    border-color: var(--mint-green);
+  }
+  .border-spring {
+    border-color: var(--spring-green);
+  }
+  .border-jade {
+    border-color: var(--jade-green);
+  }
+  .border-moss {
+    border-color: var(--moss-green);
+  }
+
+  /* Added custom animations and decorative styles for maximalist design */
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes sparkle {
+    0%,
+    100% {
+      opacity: 0.3;
+      transform: scale(0.8);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+    }
+  }
+
+  @keyframes gentle-pulse {
+    0%,
+    100% {
+      opacity: 0.8;
+    }
+    50% {
+      opacity: 1;
+    }
+  }
+
+  /* Adding new plant-themed animations */
+  @keyframes sway {
+    0%,
+    100% {
+      transform: rotate(-2deg);
+    }
+    50% {
+      transform: rotate(2deg);
+    }
+  }
+
+  @keyframes bloom {
+    0% {
+      transform: scale(0.8) rotate(-5deg);
+      opacity: 0.7;
+    }
+    50% {
+      transform: scale(1.1) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1) rotate(5deg);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes petal-fall {
+    0% {
+      transform: translateY(-10px) rotate(0deg);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100vh) rotate(360deg);
+      opacity: 0;
+    }
+  }
+
+  /* Adding new green gradient animations for botanical theme */
+  @keyframes leaf-rustle {
+    0%,
+    100% {
+      transform: translateX(-2px) rotate(-1deg);
+      filter: hue-rotate(0deg);
+    }
+    25% {
+      transform: translateX(1px) rotate(1deg);
+      filter: hue-rotate(5deg);
+    }
+    50% {
+      transform: translateX(2px) rotate(-0.5deg);
+      filter: hue-rotate(-3deg);
+    }
+    75% {
+      transform: translateX(-1px) rotate(0.5deg);
+      filter: hue-rotate(2deg);
+    }
+  }
+
+  @keyframes green-glow {
+    0%,
+    100% {
+      box-shadow: 0 0 10px var(--sage-green);
+    }
+    50% {
+      box-shadow: 0 0 20px var(--spring-green), 0 0 30px var(--mint-green);
+    }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+
+  .animate-gentle-pulse {
+    animation: gentle-pulse 4s ease-in-out infinite;
+  }
+
+  /* Adding new plant animation classes */
+  .animate-sway {
+    animation: sway 4s ease-in-out infinite;
+  }
+
+  .animate-bloom {
+    animation: bloom 3s ease-in-out infinite;
+  }
+
+  .animate-petal-fall {
+    animation: petal-fall 8s linear infinite;
+  }
+
+  /* Adding new green-themed animation classes */
+  .animate-leaf-rustle {
+    animation: leaf-rustle 5s ease-in-out infinite;
+  }
+
+  .animate-green-glow {
+    animation: green-glow 3s ease-in-out infinite;
+  }
+
+  .decorative-border {
+    border-image: linear-gradient(45deg, var(--primary), var(--accent)) 1;
+    border-width: 2px;
+    border-style: solid;
+  }
+
+  /* Enhanced glass effect with botanical elements */
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  }
+
+  .dark .glass-effect {
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Enhanced botanical decorative borders with more green elements */
+  .botanical-border {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(var(--card), var(--card)) padding-box,
+      linear-gradient(45deg, var(--sage-green), var(--spring-green), var(--mint-green)) border-box;
+    border-radius: 1rem;
+  }
+
+  .botanical-border::before {
+    content: "🌿";
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    font-size: 1.2rem;
+    animation: leaf-rustle 5s ease-in-out infinite;
+  }
+
+  .botanical-border::after {
+    content: "🌱";
+    position: absolute;
+    bottom: -8px;
+    right: -8px;
+    font-size: 1rem;
+    animation: bloom 3s ease-in-out infinite;
+  }
+
+  /* Additional botanical decorations for cards */
+  .nature-card {
+    position: relative;
+    overflow: visible;
+  }
+
+  .nature-card::before {
+    content: "🍃";
+    position: absolute;
+    top: -5px;
+    right: 10px;
+    font-size: 1.5rem;
+    animation: sway 4s ease-in-out infinite;
+    z-index: 10;
+  }
+
+  .nature-card::after {
+    content: "🌸";
+    position: absolute;
+    bottom: -5px;
+    left: 10px;
+    font-size: 1.2rem;
+    animation: bloom 3s ease-in-out infinite;
+    z-index: 10;
+  }
+
+  /* Typography classes for decorative fonts */
+  .font-dancing {
+    font-family: var(--font-dancing), cursive;
+  }
+
+  .font-crimson {
+    font-family: var(--font-crimson), serif;
+  }
+
+  .font-cormorant {
+    font-family: var(--font-cormorant), serif;
+  }
+
+  /* Added scrollbar hiding utility for smooth carousel */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
